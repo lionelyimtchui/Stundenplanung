@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="definitions_0mdbv29" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision" name="Räume und Zeitplanung abstimmen">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Vorlesungsname">
+        <inputExpression id="inputExpression1" typeRef="string">        <text></text>
+</inputExpression>
+        <inputValues id="UnaryTests_182ygr7">        <text><![CDATA["Security Management","Disign Thinking","Management koop. Prozesse","Enterprise knowledge","Grundlagen masch. lernens","Emplementierung von Prozessen"]]></text>
+</inputValues>
+      </input>
+      <input id="InputClause_1drb169" label="Vorlesungstag">
+        <inputExpression id="LiteralExpression_1yc9tal" typeRef="string" />
+        <inputValues id="UnaryTests_0nm5kz8">        <text><![CDATA["Montag","Mittwoch","Donnerstag","Freitag"]]></text>
+</inputValues>
+      </input>
+      <output id="output1" label="Raumvergabe" name="" typeRef="integer" />
+      <rule id="row-334845489-1">
+        <description></description>
+        <inputEntry id="UnaryTests_07dzoou">        <text><![CDATA["Enterprise Knowledge Engineering"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_12teejg">        <text><![CDATA["Montag"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1xcvn50">        <text>319</text>
+</outputEntry>
+      </rule>
+      <rule id="row-334845489-3">
+        <description></description>
+        <inputEntry id="UnaryTests_0du67sd">        <text><![CDATA["implementierung von Prozessen"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1aftfpz">        <text><![CDATA["Donnerstag"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0a5z8d3">        <text>321</text>
+</outputEntry>
+      </rule>
+      <rule id="DecisionRule_1g9lk2d">
+        <inputEntry id="UnaryTests_1rrp01x">        <text><![CDATA["Grundlagen masch. lernens"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0tbmu58">        <text><![CDATA["Freitag"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_040kijz">        <text>209</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
