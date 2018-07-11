@@ -1,44 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="definitions_0mdbv29" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="definitions_0mdbv29" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
   <decision id="decision" name="Räume und Zeitplanung abstimmen">
-    <decisionTable id="decisionTable">
-      <input id="input1" label="Vorlesungsname">
-        <inputExpression id="inputExpression1" typeRef="string">        <text></text>
-</inputExpression>
-        <inputValues id="UnaryTests_182ygr7">        <text><![CDATA["Security Management","Disign Thinking","Management koop. Prozesse","Enterprise knowledge","Grundlagen masch. lernens","Emplementierung von Prozessen"]]></text>
-</inputValues>
+    <extensionElements>
+      <biodi:bounds x="416" y="96" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Vorlesungsname" camunda:inputVariable="Fach">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>Fach</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_182ygr7">
+          <text>"Security Management","Disign Thinking","Management koop. Prozesse","Enterprise knowledge","Grundlagen masch. lernens","Emplementierung von Prozessen"</text>
+        </inputValues>
       </input>
-      <input id="InputClause_1drb169" label="Vorlesungstag">
-        <inputExpression id="LiteralExpression_1yc9tal" typeRef="string" />
-        <inputValues id="UnaryTests_0nm5kz8">        <text><![CDATA["Montag","Mittwoch","Donnerstag","Freitag"]]></text>
-</inputValues>
+      <input id="InputClause_1drb169" label="Vorlesungstag" camunda:inputVariable="Vorlesungstag">
+        <inputExpression id="LiteralExpression_1yc9tal" typeRef="string">
+          <text>Vorlesungstag</text>
+        </inputExpression>
       </input>
-      <output id="output1" label="Raumvergabe" name="" typeRef="integer" />
+      <output id="output1" label="Raumvergabe" typeRef="string" />
       <rule id="row-334845489-1">
         <description></description>
-        <inputEntry id="UnaryTests_07dzoou">        <text><![CDATA["Enterprise Knowledge Engineering"]]></text>
-</inputEntry>
-        <inputEntry id="UnaryTests_12teejg">        <text><![CDATA["Montag"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_1xcvn50">        <text>319</text>
-</outputEntry>
+        <inputEntry id="UnaryTests_07dzoou">
+          <text>"Enterprise Knowledge Engineering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12teejg">
+          <text>"Montag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xcvn50">
+          <text>"319"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02ey5fk">
+        <inputEntry id="UnaryTests_17tphap">
+          <text>"Enterprise Knowledge Engineering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02v5d1z">
+          <text>"Donnerstag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1be6sfz">
+          <text>"Vorlesungstag schon besetzt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u1dxrb">
+        <inputEntry id="UnaryTests_0vqfpp6">
+          <text>"Enterprise Knowledge Engineering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nu2n99">
+          <text>"Freitag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0302bi9">
+          <text>"Vorlesungstag schon besetzt"</text>
+        </outputEntry>
       </rule>
       <rule id="row-334845489-3">
         <description></description>
-        <inputEntry id="UnaryTests_0du67sd">        <text><![CDATA["implementierung von Prozessen"]]></text>
-</inputEntry>
-        <inputEntry id="UnaryTests_1aftfpz">        <text><![CDATA["Donnerstag"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_0a5z8d3">        <text>321</text>
-</outputEntry>
+        <inputEntry id="UnaryTests_0du67sd">
+          <text>"Implementierung von Prozessen"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aftfpz">
+          <text>"Donnerstag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a5z8d3">
+          <text>"321"</text>
+        </outputEntry>
       </rule>
-      <rule id="DecisionRule_1g9lk2d">
-        <inputEntry id="UnaryTests_1rrp01x">        <text><![CDATA["Grundlagen masch. lernens"]]></text>
-</inputEntry>
-        <inputEntry id="UnaryTests_0tbmu58">        <text><![CDATA["Freitag"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_040kijz">        <text>209</text>
-</outputEntry>
+      <rule id="DecisionRule_1bnh67t">
+        <inputEntry id="UnaryTests_16eqwjn">
+          <text>"Implementierung von Prozessen"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02r1bid">
+          <text>"Freitag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wv1p75">
+          <text>"Vorlesungstag schon besetzt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12eovph">
+        <inputEntry id="UnaryTests_1ofegf9">
+          <text>"Implementierung von Prozessen"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k7mpau">
+          <text>"Montag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wpb6wx">
+          <text>"Vorlesungstag schon besetzt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f1tvdv">
+        <inputEntry id="UnaryTests_12r7lrq">
+          <text>"Grundlagen masch. Lernens"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vabijp">
+          <text>"Freitag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18trw7k">
+          <text>"209"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nkugmf">
+        <inputEntry id="UnaryTests_1v516c6">
+          <text>"Grundlagen masch. Lernens"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_120tzvg">
+          <text>"Montag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08bj0er">
+          <text>"Vorlesungstag schon besetzt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wrgobk">
+        <inputEntry id="UnaryTests_1d0op1f">
+          <text>"Grundlagen masch. Lernens"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bthu2y">
+          <text>"Donnerstag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_107gt7o">
+          <text>"Vorlesungstag schon besetzt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1aq6hgn">
+        <inputEntry id="UnaryTests_0oysc80">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17xmtqb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ok6efi">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12xzqow">
+        <inputEntry id="UnaryTests_0ssctyg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k29xts">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uhyitg">
+          <text></text>
+        </outputEntry>
       </rule>
     </decisionTable>
   </decision>
