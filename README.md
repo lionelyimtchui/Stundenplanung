@@ -6,7 +6,7 @@ Am Anfang des Semesters waren wir damit beauftragt, eine Stundenplanung zu erste
 
 1. Beschreibung des Soll-Prozesses
 
-Das Ziel von diesem Kapital ist unser BPMN-Prozess und DMN-Modell zu beschreiben.
+Das Ziel von diesem Kapital ist unser BPMN-Prozess und DMN-Tabelle zu beschreiben.
 
 1.1. BPMN-Stundenplanung
 
