@@ -129,7 +129,8 @@ Wenn der Stundenplan nicht korrekt ist, wird der Entscheidungsflüsse wie folgen
 ➢ Expression = ${approved==false},
 
 ➢ Condition Type = Expression
-Abbildung 14:Sequenzflüsse-No
+
+
 Wenn der Stundenplan korrekt ist, wird die Entscheidungsflüsse wie folgendes eingestellt. Beim Daten-basierten exklusiv Gateway werden die nachfolgenden Entscheidungsflüsse ausgewertet. Der Fluss, welcher „wahr“ (engl. true) ist, wird ausgewählt und der Prozess fortgesetzt.
 
 ➢ Name= Yes
@@ -159,7 +160,7 @@ Der Benutzer hat hier die Möglichkeit, alle Aufgaben zu sehen und an wem diese 
 
 4.4. Admin
 
-Verwalten Sie Ihre camunda Web-Anwendung oder Rest-API-Nutzer, organisieren Sie Sie in Gruppen und gewähren Sie Berechtigungen mit camunda admin. Sie können auch eine bestehende Benutzerverwaltung über LDAP integrieren.
+Damit Verwalten  sie Ihre camunda Web-Anwendung oder Rest-API-Nutzer, organisieren Sie Sie in Gruppen und gewähren Sie Berechtigungen mit camunda admin. Sie können auch eine bestehende Benutzerverwaltung über LDAP integrieren.
 
 5. Github
 
